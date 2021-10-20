@@ -11,7 +11,7 @@ Draw dear imgui UIs as a wgpu render pass. Based on [imgui-gfx-renderer](https:/
 
 # Usage
 
-For usage, please have a look at the [example](examples/hello_world.rs).
+For usage, please have a look at the [example](examples/hello-world.rs).
 
 # Example
 
@@ -22,6 +22,16 @@ cargo run --release --example hello_world
 
 # Status
 
-Basic features are useable. Uses `wgpu-0.9` and `imgui-0.7` upstream. `winit-0.24` is used with the examples.
+Supports `wgpu` `0.11` and imgui `0.8`. `winit-0.25` is used with the examples.
 
 Contributions are very welcome.
+
+# Troubleshooting
+
+## Cargo resolver
+
+Starting with [`wgpu` 0.10](https://github.com/gfx-rs/wgpu/blob/06316c1bac8b78ac04d762cfb1a886bd1d453b30/CHANGELOG.md#v010-2021-08-18), the [resolver version](https://doc.rust-lang.org/cargo/reference/resolver.html#resolver-versions) needs to be set in your `Cargo.toml` to avoid build errors:
+
+```toml
+resolver = "2"
+```
